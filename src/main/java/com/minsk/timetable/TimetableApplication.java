@@ -1,0 +1,28 @@
+package com.minsk.timetable;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+//@EnableJpaRepositories
+//@SpringBootApplication()
+/**
+ * @author AleksandrovichK
+ * This is the main launch class. If you are ended up with MySQL configuration - please remove
+ * row below
+ *  --- SpringBootApplication(exclude={ DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+ * and uncomment two rows on top
+ *  --- EnableJpaRepositories
+ *  --- SpringBootApplication
+ * */
+@SpringBootApplication(exclude={ DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+public class TimetableApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TimetableApplication.class, args);
+    }
+
+}
