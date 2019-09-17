@@ -3,15 +3,15 @@ package com.minsk.timetable.dto;
 public class CustomObject {
     private String name;
     private Integer age;
-    private Long penisLength;
+    //private Long penisLength;
 
     public CustomObject() {
     }
 
-    public CustomObject(String name, Integer age, Long penisLength) {
+    public CustomObject(String name, Integer age) {
         this.name = name;
         this.age = age;
-        this.penisLength = penisLength;
+        //this.penisLength = penisLength;
     }
 
     public String getName() {
@@ -29,8 +29,8 @@ public class CustomObject {
     public void setAge(Integer age) {
         this.age = age;
     }
-
-    public Long getPenisLength() {
+    }
+    /*public Long getPenisLength() {
         return penisLength;
     }
 
@@ -38,3 +38,4 @@ public class CustomObject {
         this.penisLength = penisLength;
     }
 }
+*/
