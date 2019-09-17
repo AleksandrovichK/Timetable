@@ -20,7 +20,7 @@ public class DefaultController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/post-request")
     public CustomObject greetingsPOST(@RequestBody CustomObject obj) {
-        return new CustomObject("Taras", 34, 34L);
+        return new CustomObject("Taras", 34);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/put-request")
