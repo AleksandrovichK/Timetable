@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author AleksandrovichK and KotsyubaT
+ * @author KotsyubaT
  */
 @RestController
 public class DefaultController {
-
     @RequestMapping(method = RequestMethod.GET, value = "/start")
     public String greetings() {
         return "Hello!\nAll the services are working now!";
