@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "58f910d8-3a30-4798-b534-26962e3b33f9",
+		"name": "TIMETABLE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all rows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get row by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rows/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rows",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create row",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timeStart\": \"14:00\",\n\t\"timeEnd\": \"15:20\",\n\t\"subjectName\": \"Пакеты компьютерной математики\",\n\t\"teacher\": \"Александрович К.И.\",\n\t\"room\": \"Посольство США\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update row",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 12,\n\t\"timeStart\": \"14:00\",\n\t\"timeEnd\": \"15:20\",\n\t\"subjectName\": \"Пакеты со спайсом\",\n\t\"teacher\": \"Збышекович Д.Д.\",\n\t\"room\": \"ИНБ\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete row",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rows/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rows",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a553bf73-c021-454f-9c6a-858415ed384e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a6b83000-6ed5-4307-a658-9b78660d7436",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
