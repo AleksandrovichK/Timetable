@@ -1,5 +1,12 @@
 package com.minsk.timetable.controllers;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.*;
+
 import com.minsk.timetable.dto.CustomObject;
 
 import org.springframework.web.bind.annotation.RequestBody;
