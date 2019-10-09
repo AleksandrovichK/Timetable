@@ -21,10 +21,14 @@ import org.springframework.stereotype.Service;
 public class TimetableService implements ITimetableService {
     private final ITimetableDao dao;
 
-    @Autowired
+    public TimetableService() {
+        dao = null;
+    }
+
+   /* @Autowired
     public TimetableService(ITimetableDao dao) {
         this.dao = dao;
-    }
+    }*/
 
     @Override
     public List<TimeTableRow> findAll() {
