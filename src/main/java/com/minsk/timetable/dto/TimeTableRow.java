@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author AleksandrovichK
+ * @author AleksandrovichK, LapoM
  */
 @Entity
 @Table(name = "main_timetable")
@@ -17,6 +17,8 @@ public class TimeTableRow {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Column(name = "day", length = 20)
+    private String day;
     @Column(name = "time_start", length = 20)
     private String timeStart;
     @Column(name = "time_end", length = 20)
@@ -30,25 +32,20 @@ public class TimeTableRow {
     @Column(name = "is_cancelled", length = 20)
     private Boolean isCancelled;
 
-   /* public TimeTableRow() {
-    }
-
-    public TimeTableRow(Long id, String timeStart, String timeEnd, String subjectName, String teacher, String room, Boolean isCancelled) {
-        this.id = id;
-        this.timeStart = timeStart;
-        this.timeEnd = timeEnd;
-        this.subjectName = subjectName;
-        this.teacher = teacher;
-        this.room = room;
-        this.isCancelled = isCancelled;
-    }*/
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getDay() {
+        return day;
     }
 
     public String getTimeStart() {

@@ -16,9 +16,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *  --- EnableJpaRepositories
  *  --- SpringBootApplication
  * */
-@SpringBootApplication(exclude={ DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-//@EnableJpaRepositories
-//@SpringBootApplication
+//@SpringBootApplication(exclude={ DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@EnableJpaRepositories
+@SpringBootApplication
 public class TimetableApplication {
 
     public static void main(String[] args) {

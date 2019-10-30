@@ -17,6 +17,8 @@ public interface ITimetableService {
 
     List<TimeTableRow> findAll();
 
+    List<TimeTableRow> findByDay(String day);
+
     Long create(TimeTableRow row) throws ValidationException;
 
     Long update(TimeTableRow row) throws ValidationException;
