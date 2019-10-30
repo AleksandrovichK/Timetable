@@ -19,6 +19,12 @@ public interface ITimetableService {
 
     List<TimeTableRow> findByDay(String day);
 
+    List<TimeTableRow> findByTeacher(String teacherName);
+
+    List<TimeTableRow> findByRoom(String room);
+
+    List<TimeTableRow> findByIsCancelled(Boolean isCancelled);
+
     Long create(TimeTableRow row) throws ValidationException;
 
     Long update(TimeTableRow row) throws ValidationException;

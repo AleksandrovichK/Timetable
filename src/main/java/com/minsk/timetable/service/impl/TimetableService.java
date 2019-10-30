@@ -36,6 +36,7 @@ public class TimetableService implements ITimetableService {
     public Optional<TimeTableRow> findById(Long id) {
         return dao.findById(id);
     }
+
     @Override
     public List<TimeTableRow> findByDay(String day){
         List<TimeTableRow> result = new LinkedList<>();
@@ -46,6 +47,39 @@ public class TimetableService implements ITimetableService {
         }
         return result;
     }
+    @Override
+    public List<TimeTableRow> findByTeacher(String teacherName){
+        List<TimeTableRow> result = new LinkedList<>();
+        for (TimeTableRow item:dao.findAll()) {
+            if (item.getTeacher().equals(teacherName)){
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public List<TimeTableRow> findByRoom(String room){
+        List<TimeTableRow> result = new LinkedList<>();
+        for (TimeTableRow item:dao.findAll()) {
+            if (item.getRoom().equals(room)){
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public List<TimeTableRow> findByIsCancelled(Boolean isCancelled){
+        List<TimeTableRow> result = new LinkedList<>();
+        for (TimeTableRow item:dao.findAll()) {
+        if (item.getCancelled() == isCancelled) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
     @Override
     public Long create(TimeTableRow row) throws ValidationException {
         Long id = row.getId(), id2 = dao.save(row).getId();

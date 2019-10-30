@@ -1,5 +1,6 @@
 package com.minsk.timetable.controllers;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,11 +9,7 @@ import javax.xml.bind.ValidationException;
 import com.minsk.timetable.dto.TimeTableRow;
 import com.minsk.timetable.service.ITimetableService;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author AleksandrovichK
@@ -35,6 +32,29 @@ public class Controller {
     @RequestMapping(method = RequestMethod.GET, value = "/rows/{id}")
     public Optional<TimeTableRow> getRowById(@PathVariable Long id) {
         return service.findById(id);
+    }
+
+    @GetMapping("/rows/byDay/")
+    @ResponseBody
+    public List<TimeTableRow> getRowByDay(@RequestParam String day) {
+        return service.findByDay(day);
+    }
+
+    @GetMapping("/rows/byTeacherName/")
+    @ResponseBody
+    public List<TimeTableRow> getRowByTeacher(@RequestParam String teacherName) {
+        return service.findByTeacher(teacherName);
+    }
+
+    @GetMapping("/rows/byRoom/")
+    @ResponseBody
+    public List<TimeTableRow> getRowByRoom(@RequestParam String room) {
+        return service.findByRoom(room);
+    }
+    @GetMapping("/rows/byIsCancelled/")
+    @ResponseBody
+    public List<TimeTableRow> getRowByIsCancelled(@RequestParam Boolean isCancelled) {
+        return service.findByIsCancelled(isCancelled);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/rows")
