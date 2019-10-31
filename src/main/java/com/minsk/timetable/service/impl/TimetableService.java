@@ -103,4 +103,9 @@ public class TimetableService implements ITimetableService {
     public void deleteById(Long id) {
         dao.deleteById(id);
     }
+
+    @Override
+    public void deleteAllRows(){
+        dao.deleteAll();
+    }
 }

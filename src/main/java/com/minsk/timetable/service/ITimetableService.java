@@ -15,6 +15,8 @@ public interface ITimetableService {
 
     void deleteById(Long id);
 
+    void deleteAllRows();
+
     List<TimeTableRow> findAll();
 
     List<TimeTableRow> findByDay(String day);
@@ -28,4 +30,5 @@ public interface ITimetableService {
     Long create(TimeTableRow row) throws ValidationException;
 
     Long update(TimeTableRow row) throws ValidationException;
+
 }
